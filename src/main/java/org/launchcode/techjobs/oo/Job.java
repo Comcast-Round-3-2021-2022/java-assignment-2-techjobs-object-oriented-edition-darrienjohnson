@@ -18,7 +18,8 @@ public class Job {
     //  the 'id' field.
 
     public Job() {
-        id = nextId;
+        this.id = nextId;
+        nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
@@ -38,17 +39,21 @@ public class Job {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return getId() == job.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -89,5 +94,6 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
 }
 
