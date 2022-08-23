@@ -52,7 +52,7 @@ public class JobTest {
                 new Location("Desert"),
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        assertNotEquals(testJob1.getId(), testJob2.getId());
+        assertFalse(testJob1.equals(testJob2));
     }
 
     @Test
@@ -67,15 +67,8 @@ public class JobTest {
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals(testJob.toString(), "\n"+" "+"\n");
-
-
-//        assertEquals(testJob.getId(), "ID: _______Product tester_______\n");
-//        assertEquals(testJob.getName().toString(), "Name: _______Product tester_______\n");
-//        assertEquals(testJob.getEmployer().getValue().toString(), "Employer: _______Product tester_______\n");
-//        assertEquals(testJob.getLocation().getValue().toString(), "Location: _______Product tester_______\n");
-//        assertEquals(testJob.getPositionType().getValue().toString(), "Position: _______Product tester_______\n");
-//        assertEquals(testJob.getCoreCompetency().getValue().toString(), "Core Competency: _______Product tester_______");
+        assertEquals(testJob.toString().charAt(0), '\n');
+        assertEquals(testJob.toString().charAt(testJob.toString().length()-1), '\n');
     }
 
     @Test
@@ -87,11 +80,11 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
         assertEquals(testJob.toString(),
                 "\n"+"ID: "+ testJob.getId()+"\n"+
-                "\n"+"Name: "+ testJob.getName() +"\n"+
-                "\n"+"Employer: "+ testJob.getEmployer().getValue() +"\n"+
-                "\n"+"Location: "+testJob.getLocation().getValue()+"\n"+
-                "\n"+"Position Type: "+ testJob.getPositionType().getValue() +"\n"+
-                "\n"+"Core Competency: "+testJob.getCoreCompetency().getValue()+"\n");
+                "Name: "+ testJob.getName() +"\n"+
+                "Employer: "+ testJob.getEmployer().getValue() +"\n"+
+                "Location: "+testJob.getLocation().getValue()+"\n"+
+                "Position Type: "+ testJob.getPositionType().getValue() +"\n"+
+                "Core Competency: "+testJob.getCoreCompetency().getValue()+"\n");
     }
 
     @Test
@@ -103,10 +96,10 @@ public class JobTest {
                 new CoreCompetency(""));
         assertEquals(testJob.toString(),
                 "\n"+"ID: "+ testJob.getId()+"\n"+
-                        "\n"+"Name: "+"Data not available"+"\n"+
-                        "\n"+"Employer: "+ "Data not available" +"\n"+
-                        "\n"+"Location: "+"Data not available"+"\n"+
-                        "\n"+"Position Type: "+ "Data not available" +"\n"+
-                        "\n"+"Core Competency: "+"Data not available"+"\n");
+                        "Name: "+"Data not available"+"\n"+
+                        "Employer: "+ "Data not available" +"\n"+
+                        "Location: "+"Data not available"+"\n"+
+                        "Position Type: "+ "Data not available" +"\n"+
+                        "Core Competency: "+"Data not available"+"\n");
     }
 }

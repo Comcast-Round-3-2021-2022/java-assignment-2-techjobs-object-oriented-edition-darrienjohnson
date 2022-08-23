@@ -100,11 +100,11 @@ public class Job {
 //        return ("\n"+" "+"\n");
         String emptyFieldMessage = "Data not available";
         return ("\n"+"ID: "+ id +"\n"+
-                "\n"+"Name: "+ fieldEmptyOrNull(name, emptyFieldMessage) +"\n"+
-                "\n"+"Employer: "+ fieldEmptyOrNull(employer.getValue(), emptyFieldMessage) +"\n"+
-                "\n"+"Location: "+fieldEmptyOrNull(location.getValue(), emptyFieldMessage)+"\n"+
-                "\n"+"Position Type: "+ fieldEmptyOrNull(positionType.getValue(), emptyFieldMessage) +"\n"+
-                "\n"+"Core Competency: "+fieldEmptyOrNull(coreCompetency.getValue(), emptyFieldMessage)+"\n");
+                "Name: "+ fieldEmptyOrNull(name, emptyFieldMessage) +"\n"+
+                "Employer: "+ fieldEmptyOrNull(employer.getValue(), emptyFieldMessage) +"\n"+
+                "Location: "+fieldEmptyOrNull(location.getValue(), emptyFieldMessage)+"\n"+
+                "Position Type: "+ fieldEmptyOrNull(positionType.getValue(), emptyFieldMessage) +"\n"+
+                "Core Competency: "+fieldEmptyOrNull(coreCompetency.getValue(), emptyFieldMessage)+"\n");
     }
 
     public String fieldEmptyOrNull(String nonEmptyValue, String emptyValue ){
