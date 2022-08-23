@@ -95,5 +95,24 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    @Override
+    public String toString() {
+//        return ("\n"+" "+"\n");
+        String emptyFieldMessage = "Data not available";
+        return ("\n"+"ID: "+ id +"\n"+
+                "\n"+"Name: "+ fieldEmptyOrNull(name, emptyFieldMessage) +"\n"+
+                "\n"+"Employer: "+ fieldEmptyOrNull(employer.getValue(), emptyFieldMessage) +"\n"+
+                "\n"+"Location: "+fieldEmptyOrNull(location.getValue(), emptyFieldMessage)+"\n"+
+                "\n"+"Position Type: "+ fieldEmptyOrNull(positionType.getValue(), emptyFieldMessage) +"\n"+
+                "\n"+"Core Competency: "+fieldEmptyOrNull(coreCompetency.getValue(), emptyFieldMessage)+"\n");
+    }
+
+    public String fieldEmptyOrNull(String nonEmptyValue, String emptyValue ){
+        if(nonEmptyValue.isEmpty() || nonEmptyValue == null){
+            return emptyValue;
+        } else{
+            return nonEmptyValue;
+        }
+    }
 }
 
